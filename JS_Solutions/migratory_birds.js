@@ -6,10 +6,10 @@
  */
 function migratoryBirds(arr) {
   // Initialize an empty object to store bird IDs and their frequencies
-  let obj = {};
+  let obj = {}
   // Initialize variables to store the maximum frequency and the resulting bird ID(s)
-  let maxCount = 0;
-  let result = [];
+  let maxCount = 0
+  let result = []
 
   // Iterate through the array of bird sightings
   for (let i = 0; i < arr.length; i++) {
@@ -31,10 +31,10 @@ function migratoryBirds(arr) {
   for (let j = 0; j < arr.length; j++) {
     if (obj[arr[j]] === maxCount) {
       // Push bird IDs with the maximum count to the result array
-      result.push(arr[j]);
+      result.push(arr[j])
     }
   }
 
   // Return the minimum ID of the birds with the maximum count
-  return Math.min(...result);
+  return Math.min(...result)
 }
