@@ -21,7 +21,7 @@ function bonAppetit(bill, k, b) {
 
   // Check if Anna owes or needs a refund
   if (b !== realChargeInCarHalf) {
-    // If Anna paid more or less than her fair share, calculate the difference and store it in charge
+    // If Anna paid more or less than her fair share, calculate the difference and store it in refund
     refund = b - realChargeInCarHalf;
     console.log(refund);
   }
