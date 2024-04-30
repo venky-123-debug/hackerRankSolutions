@@ -1,38 +1,16 @@
-const gst = (objects, truckCapacity) => {
-  // let flatObjects = [];
-  // for (let arr of objects) {
-  //   flatObjects = flatObjects.concat(arr);
-  // }
-  // console.log({ flatObjects });
-  // let validObjects = objects.filter(
-  //   (object) => object.volume <= truckCapacity
-  // );
-  // console.log({ validObjects })
-
-  // objects.sort((a, b) => a.cost - b.cost)
-
-  // let remainingCapacity = 1
-  let remainingCapacity = truckCapacity
-  let maxTruckCapacity = 0
-
-  for (let object of objects) {
-    if (object.volume <= remainingCapacity) {
-      maxTruckCapacity += object.volume
-      console.log({maxTruckCapacity})
-      remainingCapacity -= object.volume
-    } else {
-      maxTruckCapacity += remainingCapacity
-      break
-    }
+const gst = (array, truckCapacity) => {
+  let totalVolume = 0
+  for (let i = 0; i < array.length; i++) {
+    totalVolume += array[i].volume
   }
-
-  return Math.round(maxTruckCapacity)
+  let trucksNeeded = Math.ceil(totalVolume / truckCapacity);
+  console.log(trucksNeeded)
 }
 
-let arrayOfObjects1 = [
+let array1 = [
   {
     cost: 23.5,
-    volume: 0.68,
+    volume: 20,
     distance: 786,
   },
   {
@@ -80,8 +58,8 @@ let arrayOfObjects1 = [
     volume: 0.21,
     distance: 630,
   },
-];
-let arrayOfObjects = [
+]
+let array2 = [
   { name: "Laptop", price: 5, volume: 0.3 },
   { name: "Tablet", price: 3, volume: 0.4 },
   { name: "Microwave", price: 2, volume: 0.5 },
@@ -92,8 +70,25 @@ let arrayOfObjects = [
   { name: "Smartphone", price: 40, volume: 0.1 },
   { name: "Blender", price: 90, volume: 0.5 },
   { name: "Headphones", price: 60, volume: 0.0004 },
-];
+]
 
 let truckCapacity = 10
-let maxTruckCapacity = gst(arrayOfObjects, truckCapacity);
-console.log(maxTruckCapacity);
+gst(array2, truckCapacity)
+
+// const gst = (objects, truckCapacity) => {
+//   let remainingCapacity = truckCapacity
+//   let maxTruckCapacity = 0
+
+//   for (let object of objects) {
+//     if (object.volume <= remainingCapacity) {
+//       maxTruckCapacity += object.volume
+//       console.log({maxTruckCapacity})
+//       remainingCapacity -= object.volume
+//     } else {
+//       maxTruckCapacity += remainingCapacity
+//       break
+//     }
+//   }
+
+//   return Math.round(maxTruckCapacity)
+// }
