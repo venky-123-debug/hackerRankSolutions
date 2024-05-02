@@ -14,7 +14,7 @@ function formingMagicSquare(s) {
 
   // Define an array to store all possible magic squares
   let magic = [];
-  
+
   // Define each possible magic square and push it into the magic array
   magic.push([2, 9, 4, 7, 5, 3, 6, 1, 8]);
   magic.push([2, 7, 6, 9, 5, 1, 4, 3, 8]);
@@ -26,25 +26,30 @@ function formingMagicSquare(s) {
   magic.push([8, 3, 4, 1, 5, 9, 6, 7, 2]);
 
   // Print the magic array for debugging purposes
-  console.log({ magic });
+  // console.log({ magic });
 
   // Define an array to store the costs of converting grid to each magic square
   let costs = [];
-  
+
   // Iterate over each magic square
   for (let i = 0; i < magic.length; i++) {
     // Initialize totalCost to 0 for each magic square
     let totalCost = 0;
-    
+
     // Iterate over each cell in the grid and calculate the absolute difference between the cell value and the corresponding magic square value
     for (let j = 0; j < grid.length; j++) {
       totalCost += Math.abs(grid[j] - magic[i][j]);
+      // console.log({totalCost});
     }
     
     // Push the totalCost for the current magic square into the costs array
     costs.push(totalCost);
   }
+  console.log({costs});
 
   // Return the minimum cost from the costs array using the spread operator and Math.min
   return Math.min(...costs);
 }
+
+let s = [[4, 8, 2], [4, 5, 7], [6, 1, 6]];
+console.log(formingMagicSquare(s))
