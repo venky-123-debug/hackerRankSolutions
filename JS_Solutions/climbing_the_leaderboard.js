@@ -1,17 +1,32 @@
+/**
+ * Calculates the ranks of players based on their scores compared to a leaderboard.
+ * @param {number[]} ranked - An array representing the scores on the leaderboard in descending order.
+ * @param {number[]} player - An array representing the scores of players in ascending order.
+ * @returns {number[]} An array containing the ranks of each player.
+ */
 function climbingLeaderboard(ranked, player) {
-  // Write your code here
-  ranked = Array.from(new Set(ranked)).sort((a, b) => a - b)
-  console.log({ranked})
-  let i = 0
-  let n = ranked.length
-  let results = []
+  // Remove duplicate scores and sort the leaderboard in ascending order
+  ranked = Array.from(new Set(ranked)).sort((a, b) => a - b);
+  
+  // Initialize variables
+  let i = 0;
+  let n = ranked.length;
+  let results = [];
+
+  // Iterate through each player's score
   player.forEach((score) => {
-    console.log({i,n},ranked[i],score,results);
-    while (i < n && ranked[i] <= score){ i = i + 1}
-    results.push(n - i + 1)
-  })
-  return results
+    // Binary search for the appropriate rank
+    while (i < n && ranked[i] <= score) {
+      i = i + 1;
+    }
+    // Calculate and push the rank to the results array
+    results.push(n - i + 1);
+  });
+
+  // Return the array containing the ranks of each player
+  return results;
 }
+
 
 
 let ranked = [100, 100, 50 ,40 ,40, 20 ,10]
