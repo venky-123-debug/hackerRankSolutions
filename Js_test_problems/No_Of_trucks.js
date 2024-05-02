@@ -60,19 +60,19 @@ let array1 = [
   },
 ]
 let array2 = [
-  { name: "Laptop", price: 5, volume: 0.3 },
-  { name: "Tablet", price: 3, volume: 0.4 },
-  { name: "Microwave", price: 2, volume: 0.5 },
-  { name: "Coffee Maker", price: 2, volume: 0.2 },
-  { name: "Keyboard", price: 20, volume: 0.3 },
-  { name: "Monitor", price: 50, volume: 0.01 },
-  { name: "Printer", price: 30, volume: 0.02 },
-  { name: "Smartphone", price: 40, volume: 0.1 },
-  { name: "Blender", price: 90, volume: 0.5 },
-  { name: "Headphones", price: 60, volume: 0.0004 },
+  { name: "Laptop", price: 5, volume: 30 },
+  { name: "Tablet", price: 3, volume: 40 },
+  { name: "Microwave", price: 2, volume: 40 },
+  { name: "Coffee Maker", price: 2, volume: 50 },
+  { name: "Keyboard", price: 20, volume:30},
+  { name: "Monitor", price: 50, volume: 51 },
+  { name: "Printer", price: 30, volume:32 },
+  { name: "Smartphone", price: 40, volume:24},
+  { name: "Blender", price: 90, volume:80 },
+  { name: "Headphones", price: 60, volume:25 },
 ]
 
-let truckCapacity = 10
+let truckCapacity = 50
 gst(array2, truckCapacity)
 
 // const gst = (objects, truckCapacity) => {
